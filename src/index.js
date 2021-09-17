@@ -8,10 +8,15 @@ function main() {
   let opened = false;
   const body = document.querySelector("body");
   // insert container
-  body.insertAdjacentHTML("beforeend", chatContainer());
+  body.insertAdjacentHTML("beforeend", chatContainer(32, 32));
   const container = document.querySelector(".chat__container");
   // insert chat modal
-  container.insertAdjacentHTML("beforeend", chatModal());
+  container.insertAdjacentHTML(
+    "beforeend",
+    chatModal(
+      "https://lh3.googleusercontent.com/-8Ep-iqq76Fk/AAAAAAAAAAI/AAAAAAAAAAA/HYnfW6qR1Q4/s44-p-k-no-ns-nd/photo.jpg"
+    )
+  );
   let modal = document.querySelector(".chat__modal");
   const chatArea = document.querySelector(".chat__area");
   // add close event listener to modal close button

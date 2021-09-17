@@ -1,6 +1,6 @@
 const whatsappIcon = require("./whatsappIcon");
 
-module.exports = function chatModal() {
+module.exports = function chatModal(logoURL) {
   return `<div
       class="chat__modal"
       style="
@@ -19,7 +19,10 @@ module.exports = function chatModal() {
           background-color:#095E54; 
           color:#fff;
           padding:20px;
+          display: flex;
+          align-items:center;
           ">
+
           <div
            class="chat__close"
            style="
@@ -28,8 +31,25 @@ module.exports = function chatModal() {
             right: 5px;
             cursor: pointer;
           ">&times;</div>
-          <div><strong>Customer Service</strong></div>
-          <div>Typically replies within a day.</div>
+
+          <div style="
+            background-color: #fff;
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            margin-right: 16px;
+          ">
+            <img style="
+              height:100%;
+              width:100%;
+              object-fit: cover;
+              object-position: center;
+            " alt="store logo" src=${logoURL} />
+          </div>
+          <div>
+            <div><strong>Customer Service</strong></div>
+            <div>Typically replies within a day.</div>
+          </div>
         </div>
 
         <div 

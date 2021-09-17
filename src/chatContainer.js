@@ -1,10 +1,9 @@
-module.exports = function chatContainer() {
+module.exports = function chatContainer(bottom, left) {
   return `<div class="chat__container"
     style="
     position:fixed; 
-    bottom:0; 
-    left:0; 
-    margin: 2rem;
+    bottom: ${bottom}px; 
+    left: ${left}px; 
     width:calc(100% - 4rem);
     "
   ></div>`;
