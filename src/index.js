@@ -21,7 +21,7 @@ function main() {
   container.insertAdjacentHTML("beforeend", chatButton());
   let button = document.querySelector(".chat__button");
   // add toggle capability rto chat button
-  button.addEventListener("click", async () => {
+  button.addEventListener("click", () => {
     modal.style.display === "none"
       ? (modal.style.display = "flex")
       : (modal.style.display = "none");
@@ -29,28 +29,27 @@ function main() {
       chatArea.insertAdjacentHTML("beforeend", typingBubble());
       const bubble = document.querySelector(".chat__bubble");
       //console.log([...bubble.children]);
-      await animation(bubble);
-      opened = true;
-      bubble.remove();
-      chatArea.insertAdjacentHTML("beforeend", welcomeMessage());
+      animation(bubble, () => {
+        opened = true;
+        bubble.remove();
+        chatArea.insertAdjacentHTML("beforeend", welcomeMessage());
+      });
     }
   });
 }
 main();
 
-function animation(bubble) {
-  return new Promise((resolve) => {
-    let count = 0;
-    let iteration = setInterval(() => {
-      [...bubble.children].forEach((child) => {
-        child.style.backgroundColor = "grey";
-      });
-      bubble.children[count].style.backgroundColor = "black";
-      count === 2 ? (count = 0) : count++;
-    }, 150);
-    setTimeout(() => {
-      clearInterval(iteration);
-      resolve();
-    }, 1500);
-  });
+function animation(bubble, cb) {
+  let count = 0;
+  let iteration = setInterval(() => {
+    [...bubble.children].forEach((child) => {
+      child.style.backgroundColor = "grey";
+    });
+    bubble.children[count].style.backgroundColor = "black";
+    count === 2 ? (count = 0) : count++;
+  }, 150);
+  setTimeout(() => {
+    clearInterval(iteration);
+    cb();
+  }, 1500);
 }
