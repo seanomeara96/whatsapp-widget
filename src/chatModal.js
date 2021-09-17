@@ -58,7 +58,7 @@ module.exports = function chatModal() {
             color: #fff;
             border-radius: 1.5rem;
           "
-          href="https://api.whatsapp.com/message/L2JR4SLG4LB5L1">${whatsappIcon(
+          href="https://web.whatsapp.com/send?phone=353851675518">${whatsappIcon(
             "none",
             "1rem"
           )}&nbsp;Start Chat</a>
