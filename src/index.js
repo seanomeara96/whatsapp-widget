@@ -18,7 +18,7 @@ function main() {
   let closeButton = document.querySelector(".chat__close");
   closeButton.addEventListener("click", () => (modal.style.display = "none"));
   // insert chat button
-  container.insertAdjacentHTML("beforeend", chatButton());
+  container.insertAdjacentHTML("beforeend", chatButton(3));
   let button = document.querySelector(".chat__button");
   // add toggle capability rto chat button
   button.addEventListener("click", () => {
@@ -28,7 +28,6 @@ function main() {
     if (!opened) {
       chatArea.insertAdjacentHTML("beforeend", typingBubble());
       const bubble = document.querySelector(".chat__bubble");
-      //console.log([...bubble.children]);
       animation(bubble, () => {
         opened = true;
         bubble.remove();
