@@ -13,7 +13,7 @@ module.exports = function welcomeMessage() {
             margin: 10px 0;
         ">
             <div>
-                Hi there 👋      
+                Hi there &#128075;      
             </div>
             <br />
             <div>
@@ -24,7 +24,7 @@ module.exports = function welcomeMessage() {
         <div style="
             text-align: right;
             color: gray;
-            font-size: .8rem;
+            font-size: 13px;
         ">
             ${new Date().getHours()}:${new Date().getMinutes()}        
         </div>

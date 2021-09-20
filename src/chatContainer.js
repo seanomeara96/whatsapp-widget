@@ -4,7 +4,7 @@ module.exports = function chatContainer(bottom, left) {
     position:fixed; 
     bottom: ${bottom}px; 
     left: ${left}px; 
-    width:calc(100% - 4rem);
+    width:calc(100% - 64px);
     "
   ></div>`;
 };

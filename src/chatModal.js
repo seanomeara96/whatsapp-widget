@@ -68,7 +68,7 @@ module.exports = function chatModal(logoURL) {
           ">
           <a style="
             background-color: #45C755;
-            padding: 1rem;
+            padding: 16px;
             width:100%;
             text-align: center;
             display: flex;
@@ -76,11 +76,11 @@ module.exports = function chatModal(logoURL) {
             align-items: center;
             text-decoration: none;
             color: #fff;
-            border-radius: 1.5rem;
+            border-radius: 24px;
           "
           href="https://wa.me/353851675518">${whatsappIcon(
             "none",
-            "1rem"
+            "16px"
           )}&nbsp;Start Chat</a>
         </div>
       </div>`;
